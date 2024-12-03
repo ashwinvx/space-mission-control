@@ -18,8 +18,9 @@ function MissionControl({ initial_missions }) {
       <h1>Space Mission Control</h1>
       <MissionFilter filterMissions={ setFilter } />
       { filteredMissions.map((mission) => {
+        const { id, name, status, crew } = mission;
         return (
-          <MissionCard key={ mission.id } name={ mission.name } status={ mission.status } crew={ mission.crew }><MissionAction missionId={ mission.id } updateStatus={ updateStatus } /></MissionCard>
+          <MissionCard key={ id } name={ name } status={ status } crew={ crew }><MissionAction missionId={ id } updateStatus={ updateStatus } /></MissionCard>
         );
       }) }
     </div>

@@ -9,9 +9,9 @@ function MissionFilter({ filterMissions }) {
   return (
     <div className="MissionFilter">
       {
-        Statuses.map(status => {
+        Statuses.map((status, index) => {
           return (
-            <button onClick={ () => handleFilter(status) }>{ status }</button>
+            <button key={ index } onClick={ () => handleFilter(status) }>{ status }</button>
           )
         })
       }

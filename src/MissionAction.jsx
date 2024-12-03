@@ -9,9 +9,9 @@ function MissionAction({ missionId, updateStatus }) {
     return (
         <div className="MissionAction">
             {
-                Actions.map(action => {
+                Actions.map((action, index) => {
                     return (
-                        <div>
+                        <div key={ index }>
                             <button onClick={ () => handleAction(action) }>{ action }</button>
                         </div>
                     )
