@@ -1,17 +1,17 @@
 import './MissionFilter.css';
-function MissionFilter({ filter }) {
+function MissionFilter({ filterMissions }) {
   const Statuses = ['All', 'Planned', 'Active', 'Completed'];
-  const handleFilter = (status) => {
-    console.log('clicked on-->', status);
-    filter(status);
-  }
 
+  //method to call parent filter method
+  const handleFilter = (status) => {
+    filterMissions(status);
+  }
   return (
     <div className="MissionFilter">
       {
         Statuses.map(status => {
           return (
-            <button key={ status } onClick={ () => handleFilter(status) }>{ status }</button>
+            <button onClick={ () => handleFilter(status) }>{ status }</button>
           )
         })
       }
